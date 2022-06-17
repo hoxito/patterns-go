@@ -2,22 +2,19 @@ package characters
 
 type iCharacterBuilder interface {
 	setName(name string)
-	setAttackDamage(damage int)
-	setAttackDistance(distance int)
-	setWeapon(weapon string)
-	getAttackDistance() int
-	getWeapon() string
-	getName() string
-	getBuilder() character
+	setAttackDamage()
+	setAttackDistance()
+	setWeapon()
+	getCharacter() character
 }
 
-func getCharacterBuilder(builderType string) iCharacterBuilder {
+func getCharacter(builderType string) iCharacterBuilder {
 	if builderType == "warrior" {
-		return &warriorCharacterBuilder{}
+		return &warriorBuilder{}
 	}
 
 	if builderType == "mage" {
-		return &mageCharacterBuilder{}
+		return &mageBuilder{}
 	}
 	return nil
 }

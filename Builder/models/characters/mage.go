@@ -1,26 +1,20 @@
 package characters
 
-type mage struct {
+type mageBuilder struct {
 	character
-	spells []string
 }
 
-func (c *mage) learnSpells(spell string) {
-	c.spells = append(c.spells, spell)
+func (c *mageBuilder) setWeapon() {
+	c.weapon = "sword"
+}
+func (c *mageBuilder) setAttackDamage() {
+	c.attackDamage = 150
 }
 
-func (c *mage) getSpells() []string {
-	return c.spells
+func (c *mageBuilder) setAttackDistance() {
+	c.attackDistance = 50
 }
 
-func newMage(name string) iCharacter {
-	return &mage{
-		character: character{
-			name:           name,
-			attackDamage:   80,
-			attackDistance: 200,
-			weapon:         "Staff",
-		},
-		spells: []string{"fireball"},
-	}
+func (c *mageBuilder) setName(name string) {
+	c.character.name = name + " the mage"
 }

@@ -5,3 +5,5 @@ A factory is an object that is used to create other objects. In Factory pattern,
 A superclass specifies all standard and generic behavior (using pure virtual "placeholders" for creation steps), and then delegates the creation details to subclasses that are supplied by the client.
 
 In a factory method pattern, a helper method (or function) is defined, to enable object creation without knowing the implementation class details. 
+
+In the example we can see that the helper method is NewCharacter that does not need to know what type of character is being created.
