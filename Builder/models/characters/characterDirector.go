@@ -1,5 +1,7 @@
 package characters
 
+// The director is responsible for using the builders and calling their methods in the right order.
+// This allows us to re utilize the building routine and create lots of similar objects
 type characterDirector struct {
 	builder iCharacterBuilder
 }

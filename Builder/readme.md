@@ -14,4 +14,4 @@ The objects might have multiple constructor arguments (typically called telescop
 parameters for the clients. Some of these parameters might be optional.
 Such constructors frequently lead to bugs in client code.
 
-Builder is a creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+Builder is a creational design pattern that lets you construct complex objects step by step instead of creating the object in a single call. The pattern allows you to produce different types and representations of an object using the same construction code and to run some additional construction steps before fetching the product.
