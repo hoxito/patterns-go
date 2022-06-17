@@ -4,18 +4,18 @@ type characterDirector struct {
 	builder iCharacterBuilder
 }
 
-func newDirector(b iCharacterBuilder) *characterDirector {
+func NewDirector(b iCharacterBuilder) *characterDirector {
 	return &characterDirector{
 		builder: b,
 	}
 }
 
-func (c *characterDirector) setBuilder(b iCharacterBuilder) {
+func (c *characterDirector) SetBuilder(b iCharacterBuilder) {
 	c.builder = b
 }
 
 //This function sets the character building order, calling each builder's method.
-func (c *characterDirector) buildHouse(name string) character {
+func (c *characterDirector) BuildCharacter(name string) character {
 	c.builder.setName(name)
 	c.builder.setAttackDamage()
 	c.builder.setAttackDistance()

@@ -3,22 +3,19 @@ package main
 import (
 	"fmt"
 
-	"github.com/hoxyto/patterns-go/FactoryMethod/models/characters"
+	"github.com/hoxyto/patterns-go/Builder/models/characters"
 )
 
 func main() {
-	mage1, err := characters.NewCharacter("mage", "Adria")
-	if err != nil {
-		fmt.Println(err)
+	warriorBuilder := characters.GetCharacter("warrior")
+	mageBuilder := characters.GetCharacter("mage")
 
-	}
-	fmt.Println(mage1)
+	director := characters.NewDirector(warriorBuilder)
+	warrior := director.BuildCharacter("John Doe")
 
-	warrior1, err := characters.NewCharacter("warrior", "carl")
-	if err != nil {
-		fmt.Println(err)
+	fmt.Printf("Warrior: %v\n", warrior)
+	director.SetBuilder(mageBuilder)
+	mage := director.BuildCharacter("Carl")
 
-	}
-	fmt.Println(warrior1)
-
+	fmt.Printf("Mage: %v\n", mage)
 }

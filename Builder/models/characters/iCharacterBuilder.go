@@ -8,7 +8,7 @@ type iCharacterBuilder interface {
 	getCharacter() character
 }
 
-func getCharacter(builderType string) iCharacterBuilder {
+func GetCharacter(builderType string) iCharacterBuilder {
 	if builderType == "warrior" {
 		return &warriorBuilder{}
 	}

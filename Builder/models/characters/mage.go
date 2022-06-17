@@ -5,14 +5,14 @@ type mageBuilder struct {
 }
 
 func (c *mageBuilder) setWeapon() {
-	c.weapon = "sword"
+	c.weapon = "staff"
 }
 func (c *mageBuilder) setAttackDamage() {
-	c.attackDamage = 150
+	c.attackDamage = 80
 }
 
 func (c *mageBuilder) setAttackDistance() {
-	c.attackDistance = 50
+	c.attackDistance = 200
 }
 
 func (c *mageBuilder) setName(name string) {
