@@ -5,18 +5,18 @@ type iWarrior interface {
 }
 type Warrior struct {
 	character
-	warcrys []string
+	Warcrys []string `json:"Warcrys,omitempty"`
 }
 
 func (c *Warrior) learnWarcry(wc string) {
-	c.warcrys = append(c.warcrys, wc)
+	c.Warcrys = append(c.Warcrys, wc)
 }
 
 func (c *Warrior) getWarcrys() []string {
-	return c.warcrys
+	return c.Warcrys
 }
 func (c *Warrior) setName(name string) {
-	c.character.name = "dovahkiin " + name
+	c.character.Name = "dovahkiin " + name
 }
 
 // in factory method we would define newWarrior here, but in abstract factory, since
@@ -29,5 +29,5 @@ func (c *Warrior) setName(name string) {
 // 		attackDistance: 50,
 // 		weapon:         "sword",
 // 	},
-// 	warcrys: []string{"Fus", "Fus Ro"},
+// 	Warcrys: []string{"Fus", "Fus Ro"},
 // }

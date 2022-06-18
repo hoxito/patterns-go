@@ -1,24 +1,45 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 
-	"github.com/hoxyto/patterns-go/FactoryMethod/models/characters"
+	"github.com/hoxyto/patterns-go/AbstractFactory/models/characters"
 )
 
 func main() {
-	mage1, err := characters.NewCharacter("mage", "Adria")
+	humanFactory, err := characters.GetCharacterFactory("human")
 	if err != nil {
-		fmt.Println(err)
-
+		panic(err)
 	}
-	fmt.Println(mage1)
+	orcFactory, _ := characters.GetCharacterFactory("orc")
+	undeadFactory, _ := characters.GetCharacterFactory("undead")
 
-	warrior1, err := characters.NewCharacter("warrior", "carl")
-	if err != nil {
-		fmt.Println(err)
+	humanWarrior := humanFactory.CreateWarrior("Carl")
+	humanMage := humanFactory.CreateMage("Harry")
 
-	}
-	fmt.Println(warrior1)
+	b, err := json.MarshalIndent(humanWarrior, "", "  ")
+	fmt.Println("human warrior: ", string(b))
+
+	b, err = json.MarshalIndent(humanMage, "", "  ")
+	fmt.Println("human mage: ", string(b))
+
+	orcWarrior := orcFactory.CreateWarrior("Harl")
+	orcMage := orcFactory.CreateMage("voldemort")
+
+	b, err = json.MarshalIndent(orcWarrior, "", "  ")
+	fmt.Println("orc warrior: ", string(b))
+
+	b, err = json.MarshalIndent(orcMage, "", "  ")
+	fmt.Println("orc mage: ", string(b))
+
+	undeadWarrior := undeadFactory.CreateWarrior("Parl")
+	undeadMage := undeadFactory.CreateMage("Dombuldore")
+
+	b, err = json.MarshalIndent(undeadWarrior, "", "  ")
+	fmt.Println("undead warrior: ", string(b))
+
+	b, err = json.MarshalIndent(undeadMage, "", "  ")
+	fmt.Println("undead mage: ", string(b))
 
 }

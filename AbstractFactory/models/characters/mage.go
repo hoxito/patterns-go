@@ -5,13 +5,13 @@ type iMage interface {
 }
 type Mage struct {
 	character
-	spells []string
+	Spells []string `json:"spells,omitempty"`
 }
 
 func (c *Mage) learnSpells(spell string) {
-	c.spells = append(c.spells, spell)
+	c.Spells = append(c.Spells, spell)
 }
 
 func (c *Mage) getSpells() []string {
-	return c.spells
+	return c.Spells
 }

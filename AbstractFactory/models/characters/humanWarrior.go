@@ -1,5 +1,5 @@
 package characters
 
 type HumanWarrior struct {
-	Warrior
+	Warrior `json:"warrior,omitempty"`
 }

@@ -1,49 +1,49 @@
 package characters
 
 type iCharacter interface {
-	setName(name string)
+	setName(Name string)
 	setAttackDamage(damage int)
 	setAttackDistance(distance int)
-	setWeapon(weapon string)
+	setWeapon(Weapon string)
 	getAttackDistance() int
 	getWeapon() string
 	getName() string
 }
 
 type character struct {
-	name           string
-	attackDamage   int
-	attackDistance int
-	weapon         string
+	Name           string `json:"name"`
+	AttackDamage   int    `json:"attackDamage"`
+	AttackDistance int    `json:"attackDistance"`
+	Weapon         string `json:"weapon"`
 }
 
-func (c *character) setName(name string) {
-	c.name = name
+func (c *character) setName(Name string) {
+	c.Name = Name
 }
 
 func (c *character) getName() string {
-	return c.name
+	return c.Name
 }
 
-func (c *character) setWeapon(weapon string) {
-	c.weapon = weapon
+func (c *character) setWeapon(Weapon string) {
+	c.Weapon = Weapon
 }
 
 func (c *character) getWeapon() string {
-	return c.weapon
+	return c.Weapon
 }
 func (c *character) setAttackDamage(damage int) {
-	c.attackDamage = damage
+	c.AttackDamage = damage
 }
 
 func (c *character) getAttackDamage() int {
-	return c.attackDamage
+	return c.AttackDamage
 }
 
 func (c *character) setAttackDistance(damage int) {
-	c.attackDistance = damage
+	c.AttackDistance = damage
 }
 
 func (c *character) getAttackDistance() int {
-	return c.attackDistance
+	return c.AttackDistance
 }

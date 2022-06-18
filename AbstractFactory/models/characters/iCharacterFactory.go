@@ -1,13 +1,15 @@
 package characters
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type iCharacterFactory interface {
-	createWarrior(name string) iWarrior
-	createMage(name string) iMage
+	CreateWarrior(name string) iWarrior
+	CreateMage(name string) iMage
 }
 
-func getSportsFactory(race string) (iCharacterFactory, error) {
+func GetCharacterFactory(race string) (iCharacterFactory, error) {
 	if race == "human" {
 		return &human{}, nil
 	}

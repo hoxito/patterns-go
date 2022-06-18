@@ -4,30 +4,30 @@ type orc struct {
 }
 
 // each character class varies its attributes depending on the race
-func (a *orc) createWarrior(name string) iWarrior {
+func (a *orc) CreateWarrior(name string) iWarrior {
 	return &OrcWarrior{
 		Warrior: Warrior{
 			character: character{
-				name:           "orc warrior " + name,
-				attackDamage:   200,
-				attackDistance: 60,
-				weapon:         "Axe",
+				Name:           "orc warrior " + name,
+				AttackDamage:   200,
+				AttackDistance: 60,
+				Weapon:         "Axe",
 			},
-			warcrys: []string{"Fus", "Fus Ro"},
+			Warcrys: []string{"AAAAAA"},
 		},
 	}
 }
 
-func (a *orc) createMage(name string) iMage {
+func (a *orc) CreateMage(name string) iMage {
 	return &OrcMage{
 		Mage: Mage{
 			character: character{
-				name:           "Shaman " + name,
-				attackDamage:   80,
-				attackDistance: 200,
-				weapon:         "Scepter",
+				Name:           "Shaman " + name,
+				AttackDamage:   80,
+				AttackDistance: 200,
+				Weapon:         "Scepter",
 			},
-			spells: []string{"fireball"},
+			Spells: []string{"fireball"},
 		},
 	}
 }
