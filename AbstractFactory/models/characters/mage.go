@@ -1,26 +1,17 @@
 package characters
 
-type mage struct {
+type iMage interface {
+	iCharacter
+}
+type Mage struct {
 	character
 	spells []string
 }
 
-func (c *mage) learnSpells(spell string) {
+func (c *Mage) learnSpells(spell string) {
 	c.spells = append(c.spells, spell)
 }
 
-func (c *mage) getSpells() []string {
+func (c *Mage) getSpells() []string {
 	return c.spells
-}
-
-func newMage(name string) iCharacter {
-	return &mage{
-		character: character{
-			name:           name,
-			attackDamage:   80,
-			attackDistance: 200,
-			weapon:         "Staff",
-		},
-		spells: []string{"fireball"},
-	}
 }

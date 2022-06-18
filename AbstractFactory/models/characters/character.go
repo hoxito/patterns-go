@@ -1,6 +1,14 @@
 package characters
 
-import "errors"
+type iCharacter interface {
+	setName(name string)
+	setAttackDamage(damage int)
+	setAttackDistance(distance int)
+	setWeapon(weapon string)
+	getAttackDistance() int
+	getWeapon() string
+	getName() string
+}
 
 type character struct {
 	name           string
@@ -38,14 +46,4 @@ func (c *character) setAttackDistance(damage int) {
 
 func (c *character) getAttackDistance() int {
 	return c.attackDistance
-}
-
-func NewCharacter(ctype string, name string) (iCharacter, error) {
-	switch ctype {
-	case "warrior":
-		return newWarrior(name), nil
-	case "mage":
-		return newMage(name), nil
-	}
-	return nil, errors.New("unknown character type")
 }
