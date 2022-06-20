@@ -7,7 +7,7 @@ func main() {
 	projectile, _ := newProjectile("arrow", 100, 280)
 	unknownProjectile, _ := newUnknownProjectile("floating arrow", 100.90, 280.22)
 	var object = &object{
-		Health: 100000,
+		health: 100000,
 	}
 	fmt.Println("object:", object)
 	cli.ImpactProjectileWithObject(projectile, object)
