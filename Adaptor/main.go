@@ -1,18 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/hoxyto/patterns-go/Adaptor/models"
+)
 
 func main() {
-	cli := newClient()
-	projectile, _ := newProjectile("arrow", 100, 280)
-	unknownProjectile, _ := newUnknownProjectile("floating arrow", 100.90, 280.22)
-	var object = &object{
-		health: 100000,
-	}
+
+	cli := models.NewClient()
+	projectile, _ := models.NewProjectile("arrow", 100, 280)
+	unknownProjectile, _ := models.NewUnknownProjectile("floating arrow", 100.90, 280.22)
+	object, _ := models.NewObject(10000000)
 	fmt.Println("object:", object)
 	cli.ImpactProjectileWithObject(projectile, object)
 	fmt.Println("object:", object)
 	cli.ImpactProjectileWithObject(unknownProjectile, object)
 	fmt.Println("object:", object)
-
 }

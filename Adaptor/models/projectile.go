@@ -1,4 +1,4 @@
-package main
+package models
 
 type projectile struct {
 	name   string
@@ -8,11 +8,11 @@ type projectile struct {
 
 func (p *projectile) impact(obj *object) error {
 
-	obj.Health = obj.Health - p.weight*p.speed
+	obj.health = obj.health - p.weight*p.speed
 	return nil
 }
 
-func newProjectile(name string, weight int, speed int) (*projectile, error) {
+func NewProjectile(name string, weight int, speed int) (*projectile, error) {
 	return &projectile{
 		name:   name,
 		weight: weight,

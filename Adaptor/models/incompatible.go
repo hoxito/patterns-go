@@ -1,4 +1,4 @@
-package main
+package models
 
 type iProjectile interface {
 	impact(*object) error
@@ -10,11 +10,11 @@ type unknownProjectile struct {
 	speed  float64
 }
 
-func (p *unknownProjectile) impact(*object) error {
-	return nil
+func (p *unknownProjectile) impact(obj *object) error {
+	return p.impactAdapter(obj)
 }
 
-func newUnknownProjectile(name string, weight, speed float64) (*unknownProjectile, error) {
+func NewUnknownProjectile(name string, weight, speed float64) (*unknownProjectile, error) {
 	return &unknownProjectile{
 		name:   name,
 		weight: weight,

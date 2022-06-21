@@ -1,4 +1,4 @@
-package main
+package models
 
 import "fmt"
 
@@ -9,6 +9,6 @@ func (c *client) ImpactProjectileWithObject(p iProjectile, o *object) {
 	fmt.Println("Client impacts projectile.")
 	p.impact(o)
 }
-func newClient() *client {
+func NewClient() *client {
 	return &client{}
 }

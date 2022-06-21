@@ -1,10 +1,10 @@
-package main
+package models
 
 type object struct {
 	health int
 }
 
-func newObject(health int) (*object, error) {
+func NewObject(health int) (*object, error) {
 	return &object{
 		health: health,
 	}, nil

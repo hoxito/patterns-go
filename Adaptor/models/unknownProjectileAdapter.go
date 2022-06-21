@@ -1,4 +1,4 @@
-package main
+package models
 
 func (p *unknownProjectile) impactAdapter(obj *object) error {
 	adaptedProjectile := &projectile{
