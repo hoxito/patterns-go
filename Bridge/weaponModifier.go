@@ -1,14 +1,14 @@
 package models
 
-type Modifier struct {
+type Element struct {
 	Name   string
 	Suffix string
 	Amount int
 }
 
-func NewModifier(name string, damage int, description string, suffix string, amount int) *Modifier {
+func NewElement(name string, damage int, description string, suffix string, amount int) *Element {
 
-	return &Modifier{
+	return &Element{
 		Name:   name,
 		Suffix: suffix,
 		Amount: amount,
