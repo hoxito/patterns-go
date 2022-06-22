@@ -1,9 +1,16 @@
 package models
 
-type weaponModifier struct {
-	Name        string
-	Description string
-	Suffix      string
-	Amount      int
-	Percentage  int
+type Modifier struct {
+	Name   string
+	Suffix string
+	Amount int
+}
+
+func NewModifier(name string, damage int, description string, suffix string, amount int) *Modifier {
+
+	return &Modifier{
+		Name:   name,
+		Suffix: suffix,
+		Amount: amount,
+	}
 }
