@@ -15,12 +15,12 @@ type Weapon struct {
 type Armour struct {
 	Name    string
 	Defense int
-	Element Element
+	Element iElement
 }
 
 func (i *Weapon) Drop() {
 	fmt.Println("Dropping a weapon")
-	i.Element.printFile()
+	i.Element.imbue()
 }
 func (i *Weapon) SetElement(e Element) {
 	fmt.Println("Dropping a weapon")
