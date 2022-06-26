@@ -10,6 +10,7 @@ type Weapon struct {
 	Name    string
 	Damage  int
 	Element iElement
+	Imbued  interface{}
 }
 
 type Armour struct {
@@ -18,21 +19,21 @@ type Armour struct {
 	Element iElement
 }
 
-func (i *Weapon) ImbueItem() {
+func (w *Weapon) ImbueItem() {
 	fmt.Println("Imbueing a weapon")
-	i.Element.Imbue()
+	w.Element.Imbue()
 }
-func (i *Weapon) SetElement(e iElement) {
-	i.Element = e
+func (w *Weapon) SetElement(e iElement) {
+	w.Element = e
 }
 
-func (i *Armour) ImbueItem() {
+func (a *Armour) ImbueItem() {
 	fmt.Println("Imbueing an Armour")
-	i.Element.Imbue()
+	a.Element.Imbue()
 
 }
-func (i *Armour) SetElement(e iElement) {
-	i.Element = e
+func (a *Armour) SetElement(e iElement) {
+	a.Element = e
 }
 func NewWeapon(name string, damage int) *Weapon {
 
