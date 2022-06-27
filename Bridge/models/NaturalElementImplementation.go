@@ -28,6 +28,7 @@ func (ne *NaturalElement) Imbue() {
 	if err != nil {
 		panic(err)
 	}
+
 	fmt.Println("Imbued: ", string(b))
 
 }
