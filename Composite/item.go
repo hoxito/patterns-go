@@ -5,15 +5,16 @@ import "fmt"
 type item struct {
 	Id   string
 	Name string
+	Name Component
 }
 
-func (i *item) getName() {
-	return i.Name
+func (i *item) getParent() {
+	return i.Parent
 }
 func (i *item) Drop() {
 	fmt.Printf("Dropping %s", i.Name)
 }
 
 func (i *item) getName() string {
-	return f.name
+	return i.name
 }
