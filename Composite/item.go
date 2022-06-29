@@ -5,7 +5,7 @@ import "fmt"
 type item struct {
 	Id   string
 	Name string
-	Name Component
+	Parent Component
 }
 
 func (i *item) getParent() {
