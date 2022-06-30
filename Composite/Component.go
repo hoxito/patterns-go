@@ -1,6 +1,7 @@
 package main
 
-type component interface {
-	getName()
-	getParent()
+type Component interface {
+	addParent(Component)
+	getName() string
+	getParent() Component
 }

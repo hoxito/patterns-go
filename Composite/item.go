@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 type item struct {
-	Id   string
-	Name string
+	Id     string
+	Name   string
 	Parent Component
 }
 
-func (i *item) getParent() {
+func (i *item) getParent() Component {
 	return i.Parent
 }
 func (i *item) Drop() {
@@ -16,5 +16,5 @@ func (i *item) Drop() {
 }
 
 func (i *item) getName() string {
-	return i.name
+	return i.Name
 }
