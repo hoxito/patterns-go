@@ -5,3 +5,10 @@ type Component interface {
 	getName() string
 	getParent() Component
 }
+
+type ComponentStruct struct {
+}
+
+func (c *ComponentStruct) addParent(cmp Component) {
+
+}
