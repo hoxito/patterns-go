@@ -5,8 +5,6 @@ import "fmt"
 type Category struct {
 	ComponentStruct
 	Components []Component
-	Name       string
-	Parent     Component
 }
 
 func (c *Category) getName() string {
