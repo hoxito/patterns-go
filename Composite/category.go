@@ -27,8 +27,8 @@ func (c *Category) getParents() (result string) {
 		parentName := c.Parent.getName()
 		return fmt.Sprintf("%s, %s", result, parentName)
 
-		return ""
 	}
+	return ""
 }
 
 func (c *Category) add(cmp Component) {
