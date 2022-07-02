@@ -1,29 +1,35 @@
 package main
 
+import (
+	"fmt"
+
+	"github.com/hoxyto/patterns-go/Composite/models"
+)
+
 func main() {
-	RustySword := &item{
-		ComponentStruct: ComponentStruct{
+	RustySword := &models.Item{
+		ComponentStruct: models.ComponentStruct{
 			Name: "Rusty sword",
 		},
 	}
-	healthPotion := &item{ComponentStruct: ComponentStruct{Name: "minor healing potion"}}
+	healthPotion := &models.Item{ComponentStruct: models.ComponentStruct{Name: "minor healing potion"}}
 
-	weapons := &Category{
-		ComponentStruct: ComponentStruct{
+	weapons := &models.Category{
+		ComponentStruct: models.ComponentStruct{
 			Name: "Weapons",
 		},
 	}
 
-	weapons.add(RustySword)
+	weapons.Add(RustySword)
 
-	Potions := &Category{
-		ComponentStruct: ComponentStruct{
+	Potions := &models.Category{
+		ComponentStruct: models.ComponentStruct{
 			Name: "Potions",
 		},
 	}
-	weapons.add(RustySword)
-	Potions.add(healthPotion)
-	weapons.add(Potions)
+	weapons.Add(RustySword)
+	Potions.Add(healthPotion)
+	weapons.Add(Potions)
 
-	weapons.search("min")
+	fmt.Printf("found: %s\n", weapons.Search("min"))
 }
