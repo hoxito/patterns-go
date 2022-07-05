@@ -1,5 +1,5 @@
 # patterns-go
-This is a design patterns showcase repository to practice and teach design patterns implemented in go made with examples you can interact with and run. #
+This is a design patterns showcase repository to practice and teach design patterns implemented in go made with examples you can interact with and run. Feel free to open issues if you have any. #
 
 ## Creational Patterns:
 1. [Singleton](https://github.com/hoxito/patterns-go/blob/master/Singleton)
