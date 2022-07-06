@@ -20,9 +20,11 @@ Use the Composite pattern when
 
 ## Structure
 
-image
+![composite structure](https://user-images.githubusercontent.com/60928120/177438824-953a5ce6-b717-4a48-af14-9acd94622d82.jpeg)
 
 A typical Composite object structure might look like this:
+
+![typical composite structure](https://user-images.githubusercontent.com/60928120/177438888-6d864c3b-8358-4ff8-b663-e9e4eb59359d.png)
 
 ## Known Uses
 Examples of the Composite pattern can be found in almost all object-oriented systems.
