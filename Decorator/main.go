@@ -5,21 +5,25 @@ import (
 	"time"
 )
 
-type Function func[T,R any]( v T) R
-
 // the decorator function
-func ProfileDecorator(fn Function) Function {
-	return func(params ...interface{}) interface{} {
-		defer func(t time.Time) {
-			fmt.Printf("--- Time Elapsed: %v ---n", time.Since(t))
-		}(time.Now())
-		return fn(params)
-	}
+func ProfileDecorator[T, R any](a func(T) R) interface{} {
+	var params T
+	defer func(t time.Time) {
+		fmt.Printf("--- Time Elapsed: %v ---n", time.Since(t))
+	}(time.Now())
+	return a(params)
 }
 
 func main() {
-	decoratedAdd := ProfileDecorator(add2)
+	decoratedAdd := ProfileDecorator(duplicate)
+
 }
-func add2(a, b int32) int32 {
-	return a + b
+
+func duplicate(b int32) int32 {
+	return b + b
 }
+
+// type IntOrString interface {int32 | string}
+// func duplicate( b IntOrString) IntOrString {
+// 	return  b + b
+// }
