@@ -6,17 +6,23 @@ import (
 )
 
 // the decorator function
-func ProfileDecorator[T, R any](a func(T) R) interface{} {
-	var params T
+func ProfileDecorator[T, R any](a func(T) R) func(T) R {
+
 	defer func(t time.Time) {
 		fmt.Printf("--- Time Elapsed: %v ---n", time.Since(t))
 	}(time.Now())
-	return a(params)
+	return func(params T) R {
+		start := time.Now()
+		result := a(params)
+		elapsed := time.Now().Sub(start)
+		fmt.Println("Time Elapsed: ", elapsed)
+		return result
+	}
 }
 
 func main() {
 	decoratedAdd := ProfileDecorator(duplicate)
-
+	fmt.Println(decoratedAdd(2))
 }
 
 func duplicate(b int32) int32 {
