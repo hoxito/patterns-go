@@ -5,11 +5,11 @@ import (
 	"time"
 )
 
-type Function func(interface{}) interface{}
+type Function func[T,R any]( v T) R
 
 // the decorator function
 func ProfileDecorator(fn Function) Function {
-	return func(params interface{}) interface{} {
+	return func(params ...interface{}) interface{} {
 		defer func(t time.Time) {
 			fmt.Printf("--- Time Elapsed: %v ---n", time.Since(t))
 		}(time.Now())
