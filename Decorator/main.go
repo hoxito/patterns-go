@@ -27,7 +27,10 @@ func main() {
 }
 
 func duplicate(b int32) int32 {
+
+	time.Sleep(2 * time.Second)
 	return b + b
+
 }
 
 // type IntOrString interface {int32 | string}
