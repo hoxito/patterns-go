@@ -5,7 +5,6 @@ import (
 	"time"
 )
 
-// the decorator function
 func ProfileDecorator[T, R any](a func(T) R) func(T) R {
 
 	defer func(t time.Time) {
@@ -28,12 +27,7 @@ func main() {
 
 func duplicate(b int32) int32 {
 
-	time.Sleep(2 * time.Second)
+	// time.Sleep(2 * time.Second)
 	return b + b
 
 }
-
-// type IntOrString interface {int32 | string}
-// func duplicate( b IntOrString) IntOrString {
-// 	return  b + b
-// }
