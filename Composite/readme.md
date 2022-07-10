@@ -5,13 +5,15 @@ Compose objects into tree structures to represent part-whole hierarchies. Compos
 
 ## Motivation
 Graphics applications like drawing editors and schematic capture systems let users build complex diagrams out of simple components. 
-The user can group componentsto form larger components,which in turn can be grouped to form still larger components.
+The user can group components to form larger components,which in turn can be grouped to form still larger components.
 A simple implementation could define classes for graphical primitives such as Text and Lines plus other classes that act as containers for these primitives.
-But there's a problem with this approach: Code that usesthese classes must treat primitive and container objects differently, even if most of the time the user treats them identically.
-Having to distinguish these objects makes the application more complex. The Composite pattern describes how to use recursive composition so that clients don't have to make this distinction.
+But there's a problem with this approach: Code that uses these classes must treat primitive and container objects differently, even if most of the time the user treats them identically.
+Having to distinguish these objects makes the application more complex. The Composite pattern describes how to use recursive composition so that clients don't have to make distinction between primitive classes.
 The greatest benefit of this approach is that you don’t need to care about the concrete classes of objects that compose the tree. 
 You don’t need to know whether an object is a simple leaf or a sophisticated branch. 
 You can treat them all the same via the common interface. When you call a method, the objects themselves pass the request down the tree.
+
+## Code Example
 
 ## Applicability
 Use the Composite pattern when
