@@ -1,13 +1,14 @@
 # Facade Pattern
 
+
 ## Description
-When a package has multiple interfaces, it can get difficult for clients to use it.
-Though the individual interfaces may be exciting for a power user, most clients will get confused with the complicated details they don't care about.
-The facade design pattern solves this, with advertising an alternative/simplified interface to other parts of the code
-## Intent
+Facade provides a unified interface to a set of interfaces in a subsystem. 
+Facade defines a higher-level interface that makes the subsystem easier to use.
 
 ## Motivation
-
+When a package has multiple interfaces, it can get difficult for clients to use it.
+Structuring a system into subsystems helps reduce complexity. A common design goal is to minimize the communication and dependencies between subsystems.
+One way to achieve this goal is to introduce a facade object that provides a single, simplified interface to the more general facilities of a subsystem
 
 ## Code Example
 

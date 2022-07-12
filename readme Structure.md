@@ -4,10 +4,9 @@ Every Pattern´s Readme must follow the next structure:
 
 ## Description
 a short description to help understand the pattern
-## Intent
-whats the problem
+what does the pattern do?
 ## Motivation
-How the pattern solves the problem
+What problem solves the pattern
 ## Code Example
 The example in this repository
 ## Applicability
