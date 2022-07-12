@@ -29,6 +29,7 @@ want to localize the knowledge of which helper subclass is the delegate.
 ## Structure
 
 
+![Factory method structure](https://user-images.githubusercontent.com/60928120/178375747-4d88b4e1-8a69-4ac5-9617-82cdfcc0eaae.png)
 
 ## Pros and Cons
 

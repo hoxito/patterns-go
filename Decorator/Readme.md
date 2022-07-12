@@ -1,6 +1,6 @@
-#Decorator
+# Decorator
 
-##intent
+## Intent
 Attach additional responsibilities to an object dynamically. Decorators provide a
 flexible alternative to subclassing for extending functionality.
 
@@ -15,8 +15,16 @@ The decorator forwards requests to the component and may perform additional acti
 Transparency lets you nest decorators recursively, thereby allowing an unlimited number of added responsibilities.
 
 ## Code Example
-In this example, you can observe a function called "profileDecorator", that wraps a function that uses type T  as argument and R as a result implemented with generics (with the keyword any), this allows this wrapper to receive any function that uses an argument and returns a value and what this wrapper does to the callback function is a time measurement for debugging purposes for example.
-Then we define a function called "duplicate" that sums a number twice just as an example function to be the callback function of the decorator.
+In this example, you can observe a function called "profileDecorator",
+
+![image](https://user-images.githubusercontent.com/60928120/178375578-089eafd9-c960-4105-9627-7540ca127e68.png)
+
+that wraps a function that uses type T  as argument and R as a result implemented with generics (with the keyword any), this allows this wrapper to receive any function that uses an argument and returns a value and what this wrapper does to the callback function is a time measurement for debugging purposes for example.
+Then we define a function called "duplicate",
+
+![image](https://user-images.githubusercontent.com/60928120/178375618-f264b52b-65e9-4ac0-bb91-cd5fb5602b80.png)
+
+that sums a number twice just as an example function to be the callback function of the decorator.
 This way we isolate any function from the wrapper, being able to extend its behavior fulfilling the solid principles.
 
 ## Applicability
@@ -27,9 +35,10 @@ Use Decorator
 
 ## Structure
 
-image
+![decorator structure](https://user-images.githubusercontent.com/60928120/178375425-702739c8-41d3-4f23-9e95-8296d1c8b8b9.png)
 
 ## Pros and Cons
+
 
 ### pros
  You can extend an object’s behavior without making a new subclass.
