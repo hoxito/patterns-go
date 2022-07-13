@@ -12,6 +12,10 @@ One way to achieve this goal is to introduce a facade object that provides a sin
 
 ## Code Example
 
+In the example given, we define 2 models: 
+A character, that will use a potion 
+A potion that will be used.
+
 ## Applicability
 
 
