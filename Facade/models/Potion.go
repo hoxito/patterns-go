@@ -11,12 +11,12 @@ type Potion struct {
 }
 
 type iPotion interface {
-	UsePotion(CharacterID string)
+	UsePotion(c Character)
 	RechargePotion()
 }
 
 func (p Potion) UsePotion(character Character) error {
-	if !p.gotCharges() {
+	if !p.hasCharges() {
 		return errors.New("no charges left")
 	}
 	if character.IsFullHealth() {
@@ -25,7 +25,7 @@ func (p Potion) UsePotion(character Character) error {
 	p.heal(character)
 	return nil
 }
-func (p Potion) gotCharges() bool {
+func (p Potion) hasCharges() bool {
 	return p.Charges > 0
 }
 func (p Potion) heal(c Character) {
