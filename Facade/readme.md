@@ -14,7 +14,12 @@ One way to achieve this goal is to introduce a facade object that provides a sin
 
 In the example given, we define 2 models: 
 A character, that will use a potion 
-A potion that will be used.
+A potion that we asume will be used by several parts of the code, in this example, by a character.
+
+Potion has many different methods, but we define an interface iPotion that will define the contract we use to interact with the rest of the application. It doesnt have the full methods collection, just the necessary ones like "UsePotion" or "RechargePotion"
+
+This way, we simplify the implementation that the rest of the code must use to interact with the potion interface.
+To use a potion, a character must call the method "UsePotion" and doesnt need to deal with the rest of the functions.
 
 ## Applicability
 
