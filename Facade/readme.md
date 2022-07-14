@@ -22,14 +22,20 @@ This way, we simplify the implementation that the rest of the code must use to i
 To use a potion, a character must call the method "UsePotion" and doesnt need to deal with the rest of the functions.
 
 ## Applicability
-
+ Use the Facade pattern when:
+    * you need to have a limited but straightforward interface to a complex subsystem.
+    * you want to structure a subsystem into layers.
+    
 
 ## Structure
 
+facade structure image
 
 
 ## Pros and Cons
 
 ### Pros
+ isolates your code from the complexity of a subsystem.
 
 ### Cons
+A facade can become a god object coupled to all classes of an app.
