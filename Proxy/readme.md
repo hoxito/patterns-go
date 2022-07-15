@@ -8,7 +8,10 @@ The Proxy pattern suggests that you create a new proxy class with the same inter
 ## Motivation
 What problem solves the pattern
 ## Code Example
-The example in this repository
+
+Suppose you want to count the numbers of kills and deaths of a character without making the character´s class very complex.
+
+
 ## Applicability
 Lazy initialization (virtual proxy). This is when you have a heavyweight service object that wastes system resources by being always up, even though you only need it from time to time.
 Access control (protection proxy). This is when you want only specific clients to be able to use the service object; for instance, when your objects are crucial parts of an operating system and clients are various launched applications (including malicious ones).
