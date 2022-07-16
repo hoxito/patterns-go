@@ -10,7 +10,13 @@ What problem solves the pattern
 ## Code Example
 
 Suppose you want to count the numbers of kills and deaths of a character without making the character´s class very complex.
-
+With ProxyCharacter interface,
+image 
+ you can substitute the RealCharacter interface.
+ image
+ The ProxyCharacter interface recieves requests, in this case the client calls the function "kill",
+image kill function
+ to command it to kill another character, does some extra work, the real interface doesnt do, and then calls the real character interface function "kill". This way you can add more work to the proxy interface without the client knowing, because both interfaces are interchangeable.
 
 ## Applicability
 Lazy initialization (virtual proxy). This is when you have a heavyweight service object that wastes system resources by being always up, even though you only need it from time to time.
