@@ -8,7 +8,7 @@ what does the pattern do?
 ## Motivation
 What problem solves the pattern
 ## Code Example
-The example in this repository
+In the example we define a map where characters can move through. 
 ## Applicability
 When to apply this pattern
 ## Structure
