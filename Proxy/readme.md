@@ -6,7 +6,7 @@ Every Pattern´s Readme must follow the next structure:
 A proxy is essentially a class functioning as an interface to something else. It is an object that delegates the work to the subject (that which is being proxied) and abstracts clients from the subject specifics. 
 The Proxy pattern suggests that you create a new proxy class with the same interface as an original service object. Then you update your app so that it passes the proxy object to all of the original object’s clients. Upon receiving a request from a client, the proxy creates a real service object and delegates all the work to it.
 ## Motivation
-What problem solves the pattern
+What problem solves the pattern 
 ## Code Example
 
 Suppose you want to count the numbers of kills and deaths of a character without making the character´s class very complex.
