@@ -1,9 +1,9 @@
 Every Pattern´s Readme must follow the next structure:
 
-# Facade Pattern
+# Proxy Pattern
 
 ## Description
-When you need to perform several high cost operations with a database for example and you must 
+A proxy is essentially a class functioning as an interface to something else. It is an object that delegates the work to the subject (that which is being proxied) and abstracts clients from the subject specifics. 
 The Proxy pattern suggests that you create a new proxy class with the same interface as an original service object. Then you update your app so that it passes the proxy object to all of the original object’s clients. Upon receiving a request from a client, the proxy creates a real service object and delegates all the work to it.
 ## Motivation
 What problem solves the pattern
@@ -12,11 +12,11 @@ What problem solves the pattern
 Suppose you want to count the numbers of kills and deaths of a character without making the character´s class very complex.
 With ProxyCharacter interface,
 image 
- you can substitute the RealCharacter interface.
- image
- The ProxyCharacter interface recieves requests, in this case the client calls the function "kill",
+you can substitute the RealCharacter interface.
+image
+The ProxyCharacter interface recieves requests, in this case the client calls the function "kill",
 image kill function
- to command it to kill another character, does some extra work, the real interface doesnt do, and then calls the real character interface function "kill". This way you can add more work to the proxy interface without the client knowing, because both interfaces are interchangeable.
+to command it to kill another character, does some extra work, the real interface doesnt do, and then calls the real character interface function "kill". This way you can add more work to the proxy interface without the client knowing, because both interfaces are interchangeable.
 
 ## Applicability
 Lazy initialization (virtual proxy). This is when you have a heavyweight service object that wastes system resources by being always up, even though you only need it from time to time.
