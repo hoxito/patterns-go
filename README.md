@@ -10,4 +10,4 @@ This is a design patterns showcase repository to practice and teach design patte
 
 ## Structural Patterns:
 1. [Adapter](https://github.com/hoxito/patterns-go/blob/master/Adapter)
-2. Composite
+2. [Composite](https://github.com/hoxito/patterns-go/tree/master/Composite)
