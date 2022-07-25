@@ -11,3 +11,5 @@ This is a design patterns showcase repository to practice and teach design patte
 ## Structural Patterns:
 1. [Adapter](https://github.com/hoxito/patterns-go/blob/master/Adapter)
 2. [Composite](https://github.com/hoxito/patterns-go/tree/master/Composite)
+3. [Facade](https://github.com/hoxito/patterns-go/tree/master/Facade)
+4. [Flyweight](https://github.com/hoxito/patterns-go/tree/master/Flyweight)
