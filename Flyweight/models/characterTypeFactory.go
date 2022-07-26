@@ -9,15 +9,15 @@ const (
 
 var (
 	characterTypeFactorySingleton = &CharacterTypeFactory{
-		characterTypeMap: make(map[string]iCharacter),
+		characterTypeMap: make(map[string]iCharacterType),
 	}
 )
 
 type CharacterTypeFactory struct {
-	characterTypeMap map[string]iCharacter
+	characterTypeMap map[string]iCharacterType
 }
 
-func (d *CharacterTypeFactory) getDressByType(CharacterType string) (iCharacter, error) {
+func (d *CharacterTypeFactory) getCharacterByType(CharacterType string) (iCharacterType, error) {
 	if d.characterTypeMap[CharacterType] != nil {
 		return d.characterTypeMap[CharacterType], nil
 	}

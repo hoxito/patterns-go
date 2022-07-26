@@ -1,69 +1,31 @@
 package models
 
-type iCharacterType interface {
-	getAttackDamage() int
-	getAttackDistance() int
-	getWeapon() string
+type Character struct {
+	CharacterType iCharacterType
+	Type          string
+	status        string
+	lat           int
+	long          int
+	speed         float32
 }
 
-type mage struct {
-	AttackDamage   int    `json:"attackDamage"`
-	AttackDistance int    `json:"attackDistance"`
-	Weapon         string `json:"weapon"`
-}
-
-func (c *mage) getWeapon() string {
-	return c.Weapon
-}
-
-func (c *mage) getAttackDamage() int {
-	return c.AttackDamage
-}
-
-func (c *mage) getAttackDistance() int {
-	return c.AttackDistance
-}
-
-func newMage() iCharacterType {
-	return &mage{
-		AttackDamage:   80,
-		AttackDistance: 200,
-		Weapon:         "Staff",
+func newPlayer(CharacterType, Type string) *Character {
+	charType, _ := getCharacterTypeFactorySingleton().getCharacterByType(CharacterType)
+	return &Character{
+		CharacterType: charType,
+		Type:          CharacterType,
 	}
 }
 
-type warrior struct {
-	AttackDamage   int    `json:"attackDamage"`
-	AttackDistance int    `json:"attackDistance"`
-	Weapon         string `json:"weapon"`
+func (c *Character) newLocation(lat, long int) {
+	c.lat = lat
+	c.long = long
 }
 
-func (c *warrior) setWeapon(Weapon string) {
-	c.Weapon = Weapon
+func (c *Character) newStatus(status string) {
+	c.status = status
 }
 
-func (c *warrior) getWeapon() string {
-	return c.Weapon
-}
-func (c *warrior) setAttackDamage(damage int) {
-	c.AttackDamage = damage
-}
-
-func (c *warrior) getAttackDamage() int {
-	return c.AttackDamage
-}
-
-func (c *warrior) setAttackDistance(damage int) {
-	c.AttackDistance = damage
-}
-
-func (c *warrior) getAttackDistance() int {
-	return c.AttackDistance
-}
-func newWarrior() iCharacter {
-	return &warrior{
-		AttackDamage:   150,
-		AttackDistance: 50,
-		Weapon:         "sword",
-	}
+func (c *Character) newSpeed(speed float32) {
+	c.speed = speed
 }
