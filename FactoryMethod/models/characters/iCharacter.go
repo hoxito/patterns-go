@@ -6,6 +6,7 @@ type iCharacter interface {
 	setAttackDistance(distance int)
 	setWeapon(weapon string)
 	getAttackDistance() int
+	getAttackDamage() int
 	getWeapon() string
 	getName() string
 }
