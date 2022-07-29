@@ -9,7 +9,7 @@ type Character struct {
 	speed         float32
 }
 
-func newPlayer(CharacterType, Type string) *Character {
+func NewCharacter(CharacterType, Type string) *Character {
 	charType, _ := getCharacterTypeFactorySingleton().getCharacterByType(CharacterType)
 	return &Character{
 		CharacterType: charType,
@@ -17,15 +17,15 @@ func newPlayer(CharacterType, Type string) *Character {
 	}
 }
 
-func (c *Character) newLocation(lat, long int) {
+func (c *Character) NewLocation(lat, long int) {
 	c.lat = lat
 	c.long = long
 }
 
-func (c *Character) newStatus(status string) {
+func (c *Character) NewStatus(status string) {
 	c.status = status
 }
 
-func (c *Character) newSpeed(speed float32) {
+func (c *Character) NewSpeed(speed float32) {
 	c.speed = speed
 }
