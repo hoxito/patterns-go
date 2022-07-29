@@ -19,13 +19,13 @@ func newGame() *game {
 }
 
 func (c *game) addMage(dressType string) {
-	player := NewCharacter("T", dressType)
+	player := models.NewCharacter("T", dressType)
 	c.mages = append(c.mages, player)
 	return
 }
 
 func (c *game) addWarrior(dressType string) {
-	player := NewCharacter("CT", dressType)
+	player := models.NewCharacter("CT", dressType)
 	c.warriors = append(c.warriors, player)
 	return
 }
