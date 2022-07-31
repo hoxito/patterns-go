@@ -3,22 +3,25 @@ package main
 import (
 	"fmt"
 
+	"github.com/hoxyto/patterns-go/Flyweight/client"
 	"github.com/hoxyto/patterns-go/Flyweight/models"
 )
 
 func main() {
-	game := newGame()
-
+	game := client.NewGame()
+	fmt.Println("creatimng mages")
 	//Add Mage
-	game.addMage("mage")
-	game.addMage("mage")
-	game.addMage("mage")
-	game.addMage("mage")
+	game.AddMage("mage")
+	game.AddMage("mage")
+	game.AddMage("mage")
+	game.AddMage("mage")
+
+	fmt.Println("creatimng warriors")
 
 	//Add Warrior
-	game.addWarrior("warrior")
-	game.addWarrior("warrior")
-	game.addWarrior("warrior")
+	game.AddWarrior("warrior")
+	game.AddWarrior("warrior")
+	game.AddWarrior("warrior")
 
 	characterTypeFactoryInstance := models.GetCharacterTypeFactorySingleton()
 
