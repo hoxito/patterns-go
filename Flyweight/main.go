@@ -1,31 +1,28 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/hoxyto/patterns-go/Flyweight/models"
 )
 
-type Character = models.Character
+func main() {
+	game := newGame()
 
-type game struct {
-	mages    []*Character
-	warriors []*Character
-}
+	//Add Mage
+	game.addMage("mage")
+	game.addMage("mage")
+	game.addMage("mage")
+	game.addMage("mage")
 
-func newGame() *game {
-	return &game{
-		mages:    make([]*Character, 1),
-		warriors: make([]*Character, 1),
+	//Add Warrior
+	game.addWarrior("warrior")
+	game.addWarrior("warrior")
+	game.addWarrior("warrior")
+
+	characterTypeFactoryInstance := models.GetCharacterTypeFactorySingleton()
+
+	for characterType, Type := range characterTypeFactoryInstance.CharacterTypeMap {
+		fmt.Printf("character type : %s\ntype attack damage: %d\ntype attack distance: %d\n type weapon: %s\n", characterType, Type.GetAttackDamage(), Type.GetAttackDistance(), Type.GetWeapon())
 	}
-}
-
-func (c *game) addMage(dressType string) {
-	player := models.NewCharacter("T", dressType)
-	c.mages = append(c.mages, player)
-	return
-}
-
-func (c *game) addWarrior(dressType string) {
-	player := models.NewCharacter("CT", dressType)
-	c.warriors = append(c.warriors, player)
-	return
 }

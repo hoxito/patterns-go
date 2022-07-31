@@ -1,9 +1,9 @@
 package models
 
 type iCharacterType interface {
-	getAttackDamage() int
-	getAttackDistance() int
-	getWeapon() string
+	GetAttackDamage() int
+	GetAttackDistance() int
+	GetWeapon() string
 }
 
 type mage struct {
@@ -12,15 +12,15 @@ type mage struct {
 	Weapon         string `json:"weapon"`
 }
 
-func (c *mage) getWeapon() string {
+func (c *mage) GetWeapon() string {
 	return c.Weapon
 }
 
-func (c *mage) getAttackDamage() int {
+func (c *mage) GetAttackDamage() int {
 	return c.AttackDamage
 }
 
-func (c *mage) getAttackDistance() int {
+func (c *mage) GetAttackDistance() int {
 	return c.AttackDistance
 }
 
@@ -42,14 +42,14 @@ func (c *warrior) setWeapon(Weapon string) {
 	c.Weapon = Weapon
 }
 
-func (c *warrior) getWeapon() string {
+func (c *warrior) GetWeapon() string {
 	return c.Weapon
 }
 func (c *warrior) setAttackDamage(damage int) {
 	c.AttackDamage = damage
 }
 
-func (c *warrior) getAttackDamage() int {
+func (c *warrior) GetAttackDamage() int {
 	return c.AttackDamage
 }
 
@@ -57,7 +57,7 @@ func (c *warrior) setAttackDistance(damage int) {
 	c.AttackDistance = damage
 }
 
-func (c *warrior) getAttackDistance() int {
+func (c *warrior) GetAttackDistance() int {
 	return c.AttackDistance
 }
 func newWarrior() iCharacterType {

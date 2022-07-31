@@ -9,31 +9,31 @@ const (
 
 var (
 	characterTypeFactorySingleton = &CharacterTypeFactory{
-		characterTypeMap: make(map[string]iCharacterType),
+		CharacterTypeMap: make(map[string]iCharacterType),
 	}
 )
 
 type CharacterTypeFactory struct {
-	characterTypeMap map[string]iCharacterType
+	CharacterTypeMap map[string]iCharacterType
 }
 
-func (d *CharacterTypeFactory) getCharacterByType(CharacterType string) (iCharacterType, error) {
-	if d.characterTypeMap[CharacterType] != nil {
-		return d.characterTypeMap[CharacterType], nil
+func (d *CharacterTypeFactory) GetCharacterByType(CharacterType string) (iCharacterType, error) {
+	if d.CharacterTypeMap[CharacterType] != nil {
+		return d.CharacterTypeMap[CharacterType], nil
 	}
 
 	if CharacterType == mageType {
-		d.characterTypeMap[CharacterType] = newMage()
-		return d.characterTypeMap[CharacterType], nil
+		d.CharacterTypeMap[CharacterType] = newMage()
+		return d.CharacterTypeMap[CharacterType], nil
 	}
 	if CharacterType == warriorType {
-		d.characterTypeMap[CharacterType] = newWarrior()
-		return d.characterTypeMap[CharacterType], nil
+		d.CharacterTypeMap[CharacterType] = newWarrior()
+		return d.CharacterTypeMap[CharacterType], nil
 	}
 
 	return nil, fmt.Errorf("Wrong character type passed")
 }
 
-func getCharacterTypeFactorySingleton() *CharacterTypeFactory {
+func GetCharacterTypeFactorySingleton() *CharacterTypeFactory {
 	return characterTypeFactorySingleton
 }

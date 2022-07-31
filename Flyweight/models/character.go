@@ -10,7 +10,7 @@ type Character struct {
 }
 
 func NewCharacter(CharacterType, Type string) *Character {
-	charType, _ := getCharacterTypeFactorySingleton().getCharacterByType(CharacterType)
+	charType, _ := GetCharacterTypeFactorySingleton().GetCharacterByType(CharacterType)
 	return &Character{
 		CharacterType: charType,
 		Type:          CharacterType,
