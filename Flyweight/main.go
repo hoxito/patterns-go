@@ -23,7 +23,7 @@ func main() {
 	game.AddWarrior("warrior")
 
 	characterTypeFactoryInstance := models.GetCharacterTypeFactorySingleton()
-	fmt.Println(characterTypeFactoryInstance.CharacterTypeMap)
+
 	for characterType, Type := range characterTypeFactoryInstance.CharacterTypeMap {
 		fmt.Printf("character type : %s\ntype attack damage: %d\ntype attack distance: %d\n type weapon: %s\n", characterType, Type.GetAttackDamage(), Type.GetAttackDistance(), Type.GetWeapon())
 	}
