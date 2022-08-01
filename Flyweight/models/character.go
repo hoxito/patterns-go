@@ -9,11 +9,11 @@ type Character struct {
 	speed         float32
 }
 
-func NewCharacter(CharacterType, Type string) *Character {
-	charType, _ := GetCharacterTypeFactorySingleton().GetCharacterByType(CharacterType)
+func NewCharacter(Type, TypeName string) *Character {
+	CharacterType, _ := GetCharacterTypeFactorySingleton().GetCharacterByType(TypeName)
 	return &Character{
-		CharacterType: charType,
-		Type:          CharacterType,
+		Type:          Type,
+		CharacterType: CharacterType,
 	}
 }
 
