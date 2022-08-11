@@ -14,6 +14,6 @@ type ClanRequest struct {
 }
 
 type clanHandler interface {
-	run(*clanRequest)
-	setNext(clanHandler)
+	Run(*ClanRequest)
+	SetNext(clanHandler)
 }

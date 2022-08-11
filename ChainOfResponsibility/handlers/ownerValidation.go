@@ -6,17 +6,17 @@ type OwnerValidation struct {
 	next clanHandler
 }
 
-func (r *OwnerValidation) run(p *ClanRequest) {
+func (r *OwnerValidation) Run(p *ClanRequest) {
 	if p.OwnerValidationDone {
 		fmt.Println("Owner Validation already done")
-		r.next.run(p)
+		r.next.Run(p)
 		return
 	}
 	fmt.Println("Owner registering player")
 	p.OwnerValidationDone = true
-	r.next.run(p)
+	r.next.Run(p)
 }
 
-func (r *OwnerValidation) setNext(next clanHandler) {
+func (r *OwnerValidation) SetNext(next clanHandler) {
 	r.next = next
 }

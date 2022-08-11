@@ -6,17 +6,17 @@ type SignIn struct {
 	next clanHandler
 }
 
-func (r *SignIn) run(p *ClanRequest) {
+func (r *SignIn) Run(p *ClanRequest) {
 	if p.SignInDone {
 		fmt.Println("SignIn  already done")
-		r.next.run(p)
+		r.next.Run(p)
 		return
 	}
 	fmt.Println("Signing In  player")
 	p.SignInDone = true
-	r.next.run(p)
+	r.next.Run(p)
 }
 
-func (r *SignIn) setNext(next clanHandler) {
+func (r *SignIn) SetNext(next clanHandler) {
 	r.next = next
 }

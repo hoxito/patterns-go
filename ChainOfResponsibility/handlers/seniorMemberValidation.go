@@ -9,12 +9,12 @@ type SeniorMemberValidation struct {
 func (r *SeniorMemberValidation) Run(p *ClanRequest) {
 	if p.SeniorMemberValidationDone {
 		fmt.Println("Senior Member Validation already done")
-		r.next.run(p)
+		r.next.Run(p)
 		return
 	}
 	fmt.Println("Senior Member registering player")
 	p.SeniorMemberValidationDone = true
-	r.next.run(p)
+	r.next.Run(p)
 }
 
 func (r *SeniorMemberValidation) SetNext(next clanHandler) {

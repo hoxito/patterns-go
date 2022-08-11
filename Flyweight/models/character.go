@@ -1,13 +1,31 @@
 package models
 
 type Character struct {
-	ID   string
-	Name string
+	CharacterType iCharacterType
+	Type          string
+	status        string
+	lat           int
+	long          int
+	speed         float32
 }
 
-func NewCharacter(ID, Name string) *Character {
+func NewCharacter(Type, TypeName string) *Character {
+	CharacterType, _ := GetCharacterTypeFactorySingleton().GetCharacterByType(TypeName)
 	return &Character{
-		Name: Name,
-		ID:   ID,
+		Type:          Type,
+		CharacterType: CharacterType,
 	}
+}
+
+func (c *Character) NewLocation(lat, long int) {
+	c.lat = lat
+	c.long = long
+}
+
+func (c *Character) NewStatus(status string) {
+	c.status = status
+}
+
+func (c *Character) NewSpeed(speed float32) {
+	c.speed = speed
 }
