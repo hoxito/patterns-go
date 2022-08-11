@@ -13,7 +13,7 @@ type ClanRequest struct {
 	SignInDone                 bool
 }
 
-type ClanHandler interface {
-	run(*ClanRequest)
-	setNext(ClanHandler)
+type clanHandler interface {
+	run(*clanRequest)
+	setNext(clanHandler)
 }

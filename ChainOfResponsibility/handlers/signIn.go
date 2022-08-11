@@ -3,7 +3,7 @@ package handlers
 import "fmt"
 
 type SignIn struct {
-	next ClanHandler
+	next clanHandler
 }
 
 func (r *SignIn) run(p *ClanRequest) {
@@ -17,6 +17,6 @@ func (r *SignIn) run(p *ClanRequest) {
 	r.next.run(p)
 }
 
-func (r *SignIn) setNext(next ClanHandler) {
+func (r *SignIn) setNext(next clanHandler) {
 	r.next = next
 }

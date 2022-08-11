@@ -3,7 +3,7 @@ package handlers
 import "fmt"
 
 type OwnerValidation struct {
-	next ClanHandler
+	next clanHandler
 }
 
 func (r *OwnerValidation) run(p *ClanRequest) {
@@ -17,6 +17,6 @@ func (r *OwnerValidation) run(p *ClanRequest) {
 	r.next.run(p)
 }
 
-func (r *OwnerValidation) setNext(next ClanHandler) {
+func (r *OwnerValidation) setNext(next clanHandler) {
 	r.next = next
 }

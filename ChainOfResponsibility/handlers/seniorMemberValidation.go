@@ -3,10 +3,10 @@ package handlers
 import "fmt"
 
 type SeniorMemberValidation struct {
-	next ClanHandler
+	next clanHandler
 }
 
-func (r *SeniorMemberValidation) run(p *ClanRequest) {
+func (r *SeniorMemberValidation) Run(p *ClanRequest) {
 	if p.SeniorMemberValidationDone {
 		fmt.Println("Senior Member Validation already done")
 		r.next.run(p)
@@ -17,6 +17,6 @@ func (r *SeniorMemberValidation) run(p *ClanRequest) {
 	r.next.run(p)
 }
 
-func (r *SeniorMemberValidation) setNext(next ClanHandler) {
+func (r *SeniorMemberValidation) SetNext(next clanHandler) {
 	r.next = next
 }
