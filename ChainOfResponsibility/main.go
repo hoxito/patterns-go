@@ -9,11 +9,9 @@ func main() {
 
 	OwnerApproval := &handlers.OwnerValidation{}
 
-	//Set next for medical department
 	SeniorApproval := &handlers.SeniorMemberValidation{}
 	SeniorApproval.SetNext(OwnerApproval)
 
-	//Set next for reception department
 	SignIn := &handlers.SignIn{}
 	SignIn.SetNext(SeniorApproval)
 
@@ -24,6 +22,6 @@ func main() {
 		OwnerValidationDone:        false,
 		SeniorMemberValidationDone: false,
 		SignInDone:                 false}
-	//Patient visiting
+
 	SignIn.Run(PlayerRequest)
 }
