@@ -33,7 +33,6 @@ func (c *Character) getLevel() int {
 func NewCharacter(name string) (*Character, error) {
 
 	return &Character{
-
 		Name:         name,
 		AttackDamage: 100,
 		Level:        1,

@@ -3,20 +3,20 @@ package handlers
 import "fmt"
 
 type OwnerValidation struct {
-	next clanHandler
+	next ClanHandler
 }
 
-func (r *OwnerValidation) Run(p *ClanRequest) {
-	if p.OwnerValidationDone {
+func (r *OwnerValidation) Run(c *ClanRequest) {
+	if c.OwnerValidationDone {
 		fmt.Println("Owner Validation already done")
-		r.next.Run(p)
+		r.next.Run(c)
 		return
 	}
 	fmt.Println("Owner registering player")
-	p.OwnerValidationDone = true
-	r.next.Run(p)
+	c.OwnerValidationDone = true
+
 }
 
-func (r *OwnerValidation) SetNext(next clanHandler) {
+func (r *OwnerValidation) SetNext(next ClanHandler) {
 	r.next = next
 }

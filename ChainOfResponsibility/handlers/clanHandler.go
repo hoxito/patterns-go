@@ -7,13 +7,13 @@ import (
 type Character = models.Character
 
 type ClanRequest struct {
-	Character                  Character
+	Character                  *Character
 	OwnerValidationDone        bool
 	SeniorMemberValidationDone bool
 	SignInDone                 bool
 }
 
-type clanHandler interface {
+type ClanHandler interface {
 	Run(*ClanRequest)
-	SetNext(clanHandler)
+	SetNext(ClanHandler)
 }

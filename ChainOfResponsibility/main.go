@@ -18,10 +18,7 @@ func main() {
 	var Player, _ = models.NewCharacter("jose")
 
 	PlayerRequest := &handlers.ClanRequest{
-		Character:                  *Player,
-		OwnerValidationDone:        false,
-		SeniorMemberValidationDone: false,
-		SignInDone:                 false}
+		Character: Player}
 
 	SignIn.Run(PlayerRequest)
 }
