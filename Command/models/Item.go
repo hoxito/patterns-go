@@ -1,4 +1,4 @@
-package command
+package models
 
 type Iitem interface {
 	Sell() error

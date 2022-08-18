@@ -1,15 +1,18 @@
-package command
+package main
+
+import "github.com/hoxyto/patterns-go/Command/models"
 
 func main() {
-	sword := &weapon{}
+	sword := &models.Weapon{Price: 300,
+		Name: "Excalibur"}
 
-	SellCommand := &SellCommand{
-		item: sword,
+	SellCommand := &models.SellCommand{
+		Item: sword,
 	}
 
-	SellButton := &Button{
-		command: SellCommand,
+	SellButton := &models.Button{
+		Command: SellCommand,
 	}
-	SellButton.press()
+	SellButton.Press()
 
 }

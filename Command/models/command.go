@@ -1,4 +1,4 @@
-package command
+package models
 
 import "fmt"
 
@@ -14,14 +14,14 @@ type Command interface {
 // Parameters required to execute a method on a receiving object can be declared as fields in the concrete command.
 // You can make command objects immutable by only allowing the initialization of these fields via the constructor.
 type SellCommand struct {
-	item Iitem
+	Item Iitem
 }
 
 func (bc *SellCommand) Execute() error {
 
 	fmt.Println("Executing sell command")
 
-	return bc.item.Sell()
+	return bc.Item.Sell()
 
 }
 func Sell(id string) error {
