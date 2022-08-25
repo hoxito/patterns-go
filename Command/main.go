@@ -13,6 +13,13 @@ func main() {
 	SellButton := &models.Button{
 		Command: SellCommand,
 	}
+
+	CtrlClick := &models.KeyBind{
+		Command: SellCommand,
+	}
+
 	SellButton.Press()
+
+	CtrlClick.Press()
 
 }
